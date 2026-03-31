@@ -3,7 +3,7 @@ data "aws_vpcs" "all" {}
 
 # Busca a VPC padrão (primeiro resultado ou outro critério)
 data "aws_vpc" "vpc_default" {
-  id = data.aws_vpcs.all.vpcs[0]  # ou outro critério
+  id = data.aws_vpcs.all.ids[0] # ou outro critério
 }
 
 # Busca subnets dessa VPC

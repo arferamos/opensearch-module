@@ -119,8 +119,13 @@ variable "use_vpc" {
   default     = false
 }
 
+variable "vpc_id" {
+  description = "ID da VPC onde o OpenSearch será criado"
+  type        = string
+}
+
 ##############################################
-# Tags
+# Tags / Contexto
 ##############################################
 
 variable "tags" {
@@ -129,4 +134,14 @@ variable "tags" {
   default = {
     ManagedBy = "Terraform"
   }
+}
+
+variable "environment" {
+  description = "Ambiente (dev, hml, prod)"
+  type        = string
+}
+
+variable "acronym" {
+  description = "Acrônimo da aplicação"
+  type        = string
 }
